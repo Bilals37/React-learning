@@ -1,0 +1,25 @@
+.main {
+    border: 1px solid black;
+    width: 550px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.childMain {
+    border: 1px solid black;
+    width: 350px;
+    background-color: aquamarine;
+}
+
+.parent {
+    border: 1px solid black;
+    width: 474px;
+    height: 336px;
+    padding-left: 10px;
+    margin-right: 10px;
+    background-color: aqua;
+
+}

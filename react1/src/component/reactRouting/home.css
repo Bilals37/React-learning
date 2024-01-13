@@ -1,0 +1,49 @@
+.Home{
+  background-color: beige;
+}
+
+
+
+.contactInfo {
+    color: maroon;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 30px;
+   
+    }
+    .icon {
+      margin-right: 10px;
+    }
+    .navName{
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-right: 50px;
+    }
+    .socialIcon{
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .header{
+      padding-top: 10px;
+      padding-bottom: 50px;
+      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 10px;
+    }
+    .nav{
+      padding-bottom: 10px;
+    }
+    .footer{
+      padding-top: 20px;
+      color: darkorchid;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0px;
+      left: 10px;
+    }
