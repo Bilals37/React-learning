@@ -2,29 +2,36 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import './index.css'
 
-function UseHook() {
+function UseHook1() {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
+    const [fetchData, setFetchData] = useState(false); // State to trigger fetching
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchDataFromAPI = async () => {
             try {
                 const response = await axios.get('https://dummyjson.com/products');
-                setData(response.data.products);  // Adjust to match the actual structure of the response
+                setData(response.data.products);
             } catch (error) {
                 setError(error);
             }
         };
 
-        fetchData();
-    }, []); // Empty dependency array to run the effect only once after the initial render
+        // Check if fetchData is true before fetching data
+        if (fetchData) {
+            fetchDataFromAPI();
+        }
+    }, [fetchData]);
 
     return (
         <>
-            <h2 style={{ marginBottom: '20px', color: 'blue' }}>API Integration using useEffect</h2>
+            <h1>Use Effect Hook</h1>
+            <h3 style={{ marginBottom: '20px', color: 'blue' }}>API Integration using useEffect</h3>
+            <h4>Fetch data using conditional Fetching</h4>
 
             {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
-            {data && (
+
+            {data ? (
                 <table style={{ borderCollapse: 'collapse', width: '100%' }}>
                     <thead>
                         <tr>
@@ -49,9 +56,18 @@ function UseHook() {
                         ))}
                     </tbody>
                 </table>
+            ) : (
+                <p>No data available. Click the button to fetch data. <br />
+                    <i>By Clicking on below button it will fetch all data from API</i><br />
+                    {/* Button to trigger fetching */}
+                    <button onClick={() => setFetchData(true)}>Fetch Data</button>
+                </p>
             )}
+
+
+            <hr />
         </>
     );
 }
 
-export default UseHook;
+export default UseHook1;

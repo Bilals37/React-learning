@@ -1,0 +1,16 @@
+button {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    background-color: rgb(133, 91, 91);
+    color: white;
+}
+
+form>div>input {
+    margin: 10px;
+}
+
+form>div {
+    font-size: 30px;
+}
